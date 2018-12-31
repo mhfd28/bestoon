@@ -73,7 +73,7 @@ def register(request):
                                  subject = "فعال سازی اکانت تودو",
                                  sender = "info@microchip97.ir",
                                  to = email,
-                                 text_body = "برای فعال سازی ایمیلی تودویر خود روی لینک روبرو کلیک کنید: http://bestoon.ir/accounts/register/?email={}&code={}".format(email, code),
+                                 text_body = "برای فعال سازی ایمیلی تودویر خود روی لینک روبرو کلیک کنید: {}?email={}&code={}".format(request. build_absolute_uri('/accounts/register/'), email, code),
                                  tag = "account request")
                 message.send()
 
