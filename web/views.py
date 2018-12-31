@@ -20,6 +20,10 @@ from django.contrib.auth.hashers import make_password
 random_str = lambda N: ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(N))
 
 
+def index(request):
+    context={}
+    return render (request,'index.html',context)
+
 
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
